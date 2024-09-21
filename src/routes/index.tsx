@@ -4,6 +4,7 @@ import { RouterPath } from './path';
 import Header from '@/components/features/layout/header';
 import HomePage from '@/pages/home';
 import MyPage from '@/pages/mypage';
+import RecommendMap from '@/pages/recommendMap';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
         element: <MyPage />,
       },
     ],
+  },
+  {
+    path: RouterPath.recommendMap,
+    element: <RecommendMap />,
   },
 ]);
 
