@@ -26,6 +26,7 @@ const Input = styled.input`
   border-radius: 10px;
   width: 19.5rem;
   height: 3rem;
+
   &:placeholder {
     color: #a3a3a3;
     font-size: 14px;
