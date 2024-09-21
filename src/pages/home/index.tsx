@@ -9,17 +9,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 const HomePage = () => {
   return (
     <Wrapper>
-      <h1>Home Page</h1>
       <Search />
       <SearchButtonM label='내 주변 장소 찾기' />
       <HotPlaceWrapper>
         <SubTitle>요즘 뜨는 장소들</SubTitle>
         <SubDes>많은 사람들이 가는곳은 어딜까요!</SubDes>
-        <Swiper
-          spaceBetween={50}
-          slidesPerView={2}
-          style={{ width: '90%', margin: '0 auto' }}
-        >
+        <Swiper spaceBetween={10} slidesPerView={2} style={{ width: '100%' }}>
           <SwiperSlide>
             <PlaceBoxM title='감래등' des1='맛이 좋아요' des2='자리가 넓어요' />
           </SwiperSlide>
@@ -95,21 +90,21 @@ const Wrapper = styled.div`
   gap: 25px;
   width: 100%;
   background-image: linear-gradient(to top, white 70%, #7b6fbd 70%);
-  margin-bottom: 30px;
+  padding: 40px 20px;
 `;
 
 const HotPlaceWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
-  width: 85%;
+  width: 95%;
 `;
 
 const CurationWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
-  width: 85%;
+  width: 90%;
 `;
 
 const SubTitle = styled.text`
