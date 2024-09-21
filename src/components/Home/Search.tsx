@@ -1,5 +1,6 @@
 import SearchIcon from '@/assets/home/SearchIcon.svg';
 import { Image } from '@chakra-ui/react';
+import styled from '@emotion/styled';
 
 const Search = () => {
   return (
@@ -25,10 +26,11 @@ const Input = styled.input`
   border-radius: 10px;
   width: 220px;
   height: 40px;
-  &::placeholder {
+  &:placeholder {
     color: #a3a3a3;
     font-size: 14px;
   }
+
   &:focus {
     outline: none;
   }
