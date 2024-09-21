@@ -13,7 +13,8 @@ export const SearchButtonL = ({ label }: { label: string }) => {
 
 const SearchButtonComponent = styled(Button)`
   background-color: #59beeb;
-  width: 220px;
+  max-width: 220px;
+  width: 90%;
   height: 40px;
   font-size: 18px;
   color: white;
@@ -25,7 +26,8 @@ const SearchButtonComponent = styled(Button)`
 
 const SearchButtonComponent2 = styled(Button)`
   background-color: #59beeb;
-  width: 340px;
+  max-width: 340px;
+  width: 100%;
   height: 40px;
   font-size: 18px;
   color: white;
