@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
-import { BackButtonWhite } from '@/components/RecommendMap/BackButton';
-import { PlusButtton } from '@/components/RecommendMap/PlusButton';
+import { BackButtonWhite } from '@/components/Map/BackButton';
+import { PlusButtton } from '@/components/Map/PlusButton';
 import styled from '@emotion/styled';
 
 const RecommandMap = () => {
@@ -12,7 +12,7 @@ const RecommandMap = () => {
         center: new window.kakao.maps.LatLng(33.450701, 126.570667),
         level: 3,
       };
-      const map = new window.kakao.maps.Map(container, options);
+      return new window.kakao.maps.Map(container, options);
     } else {
       console.error('Map container not found');
     }
