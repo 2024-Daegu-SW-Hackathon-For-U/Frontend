@@ -72,7 +72,7 @@ const HomePage = () => {
         <BoxWrapper>
           <PlaceBoxL icon='☕️' title='공부하기 좋은 카페' des2='5개장소' />
           <PlaceBoxL icon='☕️' title='공부하기 좋은 카페' des2='5개장소' />
-          <PlaceBoxL icon='☕️' title='공부하기 좋은 카페' des2='5개장소' />{' '}
+          <PlaceBoxL icon='☕️' title='공부하기 좋은 카페' des2='5개장소' />
           <PlaceBoxL icon='☕️' title='공부하기 좋은 카페' des2='5개장소' />
           <SearchButtonL label='큐레이션 지도 전체 보기' />
         </BoxWrapper>
