@@ -3,7 +3,7 @@ import { extendTheme } from '@chakra-ui/react';
 const GlobalTheme = extendTheme({
   // Font Family 선언
   fonts: {
-    body: `'Pretendard-Regular', sans-serif`,
+    body: `'Noto Sans KR', sans-serif`,
   },
   colors: {
     /**
@@ -11,22 +11,74 @@ const GlobalTheme = extendTheme({
      * 사용 : 'color.색상이름'
      */
     color: {
-      basic: '#2e2e2e',
+      primary: '#7B6FBD',
+      secondary: '#59BEEB',
       white: '#fff',
-      gray: '#909090',
-      primary: '#C69090',
-      secondary: '#F6E4E4',
-      whiteGray: '#F2F2F2',
+      similarWhite: '#F9F9FB',
+      black: '#2e2e2e',
+      similarBlack: '#606060',
+      gray: '#C0C0C0',
+    },
+  },
+  textStyles: {
+    sm: {
+      fontSize: '16px',
+      fontWeight: '500',
+    },
+    smBold: {
+      fontSize: '16px',
+      fontWeight: '700',
+    },
+    smHeavy: {
+      fontSize: '16px',
+      fontWeight: '900',
+    },
+    md: {
+      fontSize: '18px',
+      fontWeight: '500',
+    },
+    mdBold: {
+      fontSize: '18px',
+      fontWeight: '700',
+    },
+    mdHeavy: {
+      fontSize: '18px',
+      fontWeight: '900',
+    },
+    lg: {
+      fontSize: '20px',
+      fontWeight: '500',
+    },
+    lgBold: {
+      fontSize: '20px',
+      fontWeight: '700',
+    },
+    lgHeavy: {
+      fontSize: '20px',
+      fontWeight: '900',
+    },
+    xl: {
+      fontSize: '22px',
+      fontWeight: '500',
+    },
+    xlBold: {
+      fontSize: '22px',
+      fontWeight: '700',
+    },
+    xlHeavy: {
+      fontSize: '22px',
+      fontWeight: '900',
     },
   },
   styles: {
     // Global Font Face 선언
     global: {
       '@font-face': {
-        fontFamily: 'Pretendard-Regular',
-        src: `url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff')`,
-        fontWeight: '400, 700, 900',
+        fontFamily: 'Noto Sans KR',
+        src: `url(''https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap'') format('woff')`,
+        fontWeight: '500, 700, 900',
         fontStyle: 'normal',
+        fontOpticalSizing: 'auto',
       },
       body: {
         margin: 0,
