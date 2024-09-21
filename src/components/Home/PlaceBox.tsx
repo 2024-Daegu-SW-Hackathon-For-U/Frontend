@@ -43,7 +43,7 @@ const PlaceBox1 = styled.div`
   align-items: center;
 
   background-color: #fff;
-  width: 200px;
+  width: 90%;
   height: 100px;
   font-size: 14px;
   color: #606060;
