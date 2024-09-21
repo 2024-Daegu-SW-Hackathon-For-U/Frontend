@@ -55,7 +55,7 @@ const FlexBox = styled(Box)`
 
 const MyPageLayout = styled(FlexBox)`
   height: 100vh;
-  width: 100vw;
+  width: 100%;
 `;
 
 const InputItem = styled.input`
