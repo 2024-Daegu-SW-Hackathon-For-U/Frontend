@@ -12,13 +12,13 @@
     "format:fix": "prettier --write --ignore-path .gitignore ."
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@tanstack/react-query": "^5.51.11",
     "axios": "^1.7.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
     "react-modal": "^3.16.1",
     "react-router-dom": "^6.26.1",
@@ -49,7 +49,7 @@
     "eslint-plugin-react-refresh": "^0.4.6",
     "prettier": "^3.2.5",
     "ts-node": "10.9.2",
-    "typescript": "^5.5.3",
+    "typescript": "^5.6.2",
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1",
     "vite-plugin-pwa": "^0.20.1"
