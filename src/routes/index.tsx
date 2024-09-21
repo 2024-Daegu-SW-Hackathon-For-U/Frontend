@@ -1,12 +1,14 @@
+import { lazy } from 'react';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 
 import { RouterPath } from './path';
-import Header from '@/components/features/layout/header';
-import CurationMap from '@/pages/curationMap';
-import HomePage from '@/pages/home';
-import MyMapSetting from '@/pages/my-map-setting';
-import MyPage from '@/pages/mypage';
-import RecommendMap from '@/pages/recommendMap';
+
+const Header = lazy(() => import('@/components/features/layout/header'));
+const HomePage = lazy(() => import('@/pages/home'));
+const MyMapSetting = lazy(() => import('@/pages/my-map-setting'));
+const MyPage = lazy(() => import('@/pages/mypage'));
+const RecommendMap = lazy(() => import('@/pages/recommend-map'));
+const CurationMap = lazy(() => import('@/pages/curation-map'));
 
 const router = createBrowserRouter([
   {
