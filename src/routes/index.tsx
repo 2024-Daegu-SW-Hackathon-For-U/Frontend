@@ -2,9 +2,11 @@ import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 
 import { RouterPath } from './path';
 import Header from '@/components/features/layout/header';
+import CurationMap from '@/pages/curationMap';
 import HomePage from '@/pages/home';
 import MyMapSetting from '@/pages/my-map-setting';
 import MyPage from '@/pages/mypage';
+import RecommendMap from '@/pages/recommendMap';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
         element: <MyMapSetting />,
       },
     ],
+  },
+  {
+    path: RouterPath.recommendMap,
+    element: <RecommendMap />,
+  },
+  {
+    path: RouterPath.curationMap,
+    element: <CurationMap />,
   },
 ]);
 
