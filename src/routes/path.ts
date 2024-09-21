@@ -3,4 +3,5 @@ export const RouterPath = {
   login: '/login',
   mypage: '/mypage',
   recommendMap: '/recommend-map',
+  curationMap: '/curation-map',
 };
