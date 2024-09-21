@@ -1,12 +1,11 @@
 import styled from '@emotion/styled';
-import SearchIcon from '@mui/icons-material/Search';
 
 const Search = () => {
   return (
     <Wrapper>
       <Input placeholder='찾고 싶은 장소를 입력해주세요' />
       <IconWrapper>
-        <SearchIcon />
+        <img src='/images/SearchIcon.svg' />
       </IconWrapper>
     </Wrapper>
   );
@@ -27,6 +26,7 @@ const Input = styled.input`
   height: 40px;
   &::placeholder {
     color: #a3a3a3;
+    font-size: 14px;
   }
   background-color: #fff;
 `;
