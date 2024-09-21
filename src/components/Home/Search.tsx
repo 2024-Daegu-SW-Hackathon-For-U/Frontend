@@ -1,5 +1,6 @@
 import SearchIcon from '@/assets/home/SearchIcon.svg';
 import { Image } from '@chakra-ui/react';
+import styled from '@emotion/styled';
 
 const Search = () => {
   return (
