@@ -22,51 +22,51 @@ const GlobalTheme = extendTheme({
   },
   textStyles: {
     sm: {
-      fontSize: '16px',
+      fontSize: '18px',
       fontWeight: '500',
     },
     smBold: {
-      fontSize: '16px',
+      fontSize: '18px',
       fontWeight: '700',
     },
     smHeavy: {
-      fontSize: '16px',
+      fontSize: '18px',
       fontWeight: '900',
     },
     md: {
-      fontSize: '18px',
+      fontSize: '20px',
       fontWeight: '500',
     },
     mdBold: {
-      fontSize: '18px',
+      fontSize: '20px',
       fontWeight: '700',
     },
     mdHeavy: {
-      fontSize: '18px',
+      fontSize: '20px',
       fontWeight: '900',
     },
     lg: {
-      fontSize: '20px',
+      fontSize: '24px',
       fontWeight: '500',
     },
     lgBold: {
-      fontSize: '20px',
+      fontSize: '24px',
       fontWeight: '700',
     },
     lgHeavy: {
-      fontSize: '20px',
+      fontSize: '24px',
       fontWeight: '900',
     },
     xl: {
-      fontSize: '22px',
+      fontSize: '26px',
       fontWeight: '500',
     },
     xlBold: {
-      fontSize: '22px',
+      fontSize: '26px',
       fontWeight: '700',
     },
     xlHeavy: {
-      fontSize: '22px',
+      fontSize: '26px',
       fontWeight: '900',
     },
   },
