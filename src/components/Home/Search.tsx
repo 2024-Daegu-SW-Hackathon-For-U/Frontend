@@ -1,11 +1,12 @@
-import styled from '@emotion/styled';
+import SearchIcon from '@/assets/home/SearchIcon.svg';
+import { Image } from '@chakra-ui/react';
 
 const Search = () => {
   return (
     <Wrapper>
       <Input placeholder='찾고 싶은 장소를 입력해주세요' />
       <IconWrapper>
-        <img src='/images/SearchIcon.svg' />
+        <Image src={SearchIcon} />
       </IconWrapper>
     </Wrapper>
   );
@@ -27,6 +28,9 @@ const Input = styled.input`
   &::placeholder {
     color: #a3a3a3;
     font-size: 14px;
+  }
+  &:focus {
+    outline: none;
   }
   background-color: #fff;
 `;
