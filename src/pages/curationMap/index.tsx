@@ -1,6 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect } from 'react';
-
-import { Map as KakaoMap, Marker, InfoWindow } from 'kakao.maps';
 
 import { BackButtonPurple } from '@/components/Map/BackButton';
 import { MapListBox } from '@/components/Map/MapListBox';
@@ -65,18 +64,14 @@ const CurationMap = () => {
   }, []);
 
   // 인포윈도우를 표시하는 클로저를 만드는 함수입니다
-  function makeOverListener(
-    map: KakaoMap,
-    marker: Marker,
-    infowindow: InfoWindow
-  ) {
+  function makeOverListener(map: any, marker: any, infowindow: any) {
     return function () {
       infowindow.open(map, marker);
     };
   }
 
   // 인포윈도우를 닫는 클로저를 만드는 함수입니다
-  function makeOutListener(infowindow: InfoWindow) {
+  function makeOutListener(infowindow: any) {
     return function () {
       infowindow.close();
     };
