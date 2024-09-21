@@ -12,7 +12,6 @@ function App() {
         <Routes />
       </QueryClientProvider>
     </ChakraProvider>
->>>>>>> 39562d20c83275b497676fe45767fa92ea2faf24
   );
 }
 
