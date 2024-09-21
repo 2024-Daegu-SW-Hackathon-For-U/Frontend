@@ -1,8 +1,10 @@
+import Menu from './menu';
 import MenuIcon from '@/assets/header/menu.svg';
-import { Box, Image, Text } from '@chakra-ui/react';
+import { Box, Image, Text, useDisclosure } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
 const Header = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <HeaderLayout backgroundColor='color.primary'>
       <FlexBox>
@@ -18,6 +20,7 @@ const Header = () => {
           로그인
         </Text>
         <FlexBox
+          onClick={onOpen}
           backgroundColor='color.white'
           paddingY='0.5rem'
           paddingX='0.75rem'
@@ -28,6 +31,7 @@ const Header = () => {
           <Image width='1.5rem' src={MenuIcon} alt='menu' />
         </FlexBox>
       </FlexBox>
+      <Menu isOpen={isOpen} onClose={onClose} />
     </HeaderLayout>
   );
 };
@@ -39,7 +43,7 @@ const HeaderLayout = styled(Box)`
   text-align: center;
   align-items: center;
   // Top, Right, Bottom, Left
-  padding: 10px 0 10px 20px;
+  padding: 20px 0 20px 30px;
   justify-content: space-between;
 `;
 

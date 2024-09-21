@@ -24,12 +24,14 @@ const Input = styled.input`
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  width: 220px;
-  height: 40px;
-  &::placeholder {
+  width: 19.5rem;
+  height: 3rem;
+
+  &:placeholder {
     color: #a3a3a3;
     font-size: 14px;
   }
+
   &:focus {
     outline: none;
   }
