@@ -1,10 +1,9 @@
 import { useEffect } from 'react';
 
-import { BackButtonWhite } from '@/components/Map/BackButton';
-import { PlusButtton } from '@/components/Map/PlusButton';
+import { BackButtonPurple } from '@/components/Map/BackButton';
 import styled from '@emotion/styled';
 
-const RecommandMap = () => {
+const CurationMap = () => {
   useEffect(() => {
     const container = document.getElementById('map');
     if (container) {
@@ -19,24 +18,29 @@ const RecommandMap = () => {
   }, []);
 
   return (
-    <Wrapper id='map' style={{ width: '100%', height: '100vh' }}>
-      <BackButtonsWrapper>
-        <BackButtonWhite label='공부하기 좋은 카페' />
-      </BackButtonsWrapper>
-      <PlusButtonsWrapper>
-        <PlusButtton label='장소 추천하기' />
-      </PlusButtonsWrapper>
-    </Wrapper>
+    <>
+      <Wrapper id='map'>
+        <BackButtonsWrapper>
+          <BackButtonPurple label='공부하기 좋은 카페' />
+        </BackButtonsWrapper>
+        <PlusButtonsWrapper></PlusButtonsWrapper>
+      </Wrapper>
+      <ListWrapper>
+        <h1>List</h1>
+      </ListWrapper>
+    </>
   );
 };
 
-export default RecommandMap;
+export default CurationMap;
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 100%;
+  height: 60vh;
   position: relative;
 `;
+
+const ListWrapper = styled.div``;
 
 const BackButtonsWrapper = styled.div`
   display: flex;
