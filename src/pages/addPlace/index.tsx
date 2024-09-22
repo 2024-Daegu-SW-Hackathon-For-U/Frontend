@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from 'react';
 import { Map, MapMarker, useMap } from 'react-kakao-maps-sdk';
+import { useNavigate } from 'react-router-dom';
 
 import { BackButtonWhite } from '@/components/Map/BackButton';
 import styled from '@emotion/styled';
@@ -9,6 +10,12 @@ function KakaoKeywordMap() {
   const [map, setMap] = useState<any>();
   const [markers, setMarkers] = useState<any[]>([]);
   const [places, setPlaces] = useState<any[]>([]);
+
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    navigate(-1);
+  };
 
   const [searchInput, setSearchInput] = useState('이태원 맛집');
   const [keyword, setKeyword] = useState('이태원 맛집');
@@ -118,7 +125,7 @@ function KakaoKeywordMap() {
           />
         ))}
       </Map>
-      <BackButtonsWrapper>
+      <BackButtonsWrapper onClick={goBack}>
         <BackButtonWhite label='공부하기 좋은 카페' />
       </BackButtonsWrapper>
       <MenuWrap className='bg_white'>

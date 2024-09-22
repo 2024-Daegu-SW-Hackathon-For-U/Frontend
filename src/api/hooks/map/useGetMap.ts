@@ -6,6 +6,7 @@ type ShareType = 'SHARE' | 'CURATION' | '';
 type MapItem = {
   id: number;
   name: string;
+  count: number;
 };
 
 type getMapResponse = MapItem[];
