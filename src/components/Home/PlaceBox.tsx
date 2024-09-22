@@ -11,6 +11,7 @@ interface PlaceBoxLProps {
   title: string;
   des1?: string;
   des2: string;
+  onClick?: () => void;
 }
 
 // 미디엄 사이즈 버튼
@@ -27,9 +28,15 @@ export const PlaceBoxM = ({ title, des1, des2 }: PlaceBoxMProps) => {
 };
 
 // 라지 사이즈 버튼
-export const PlaceBoxL = ({ icon, title, des1, des2 }: PlaceBoxLProps) => {
+export const PlaceBoxL = ({
+  icon,
+  title,
+  des1,
+  des2,
+  onClick,
+}: PlaceBoxLProps) => {
   return (
-    <PlaceBox2>
+    <PlaceBox2 onClick={onClick}>
       <h2>{icon}</h2>
       <h2 style={{ fontWeight: 'bold' }}>{title}</h2>
       <p style={{ color: 'gray' }}>{des1 ? `${des1} | ${des2}` : des2}</p>

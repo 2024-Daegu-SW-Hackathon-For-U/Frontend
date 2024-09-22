@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import { BackButtonPurple } from '@/components/Map/BackButton';
 import { MapListBox } from '@/components/Map/MapListBox';
@@ -7,14 +8,13 @@ import { List } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
 const CurationMap = () => {
-  //const [positions, setPositions] = useState<any[]>([]); // 백엔드에서 받는 데이터 타입 지정 필요
-  //const [places, setPlaces] = useState<any[]>([]);
+  const navigate = useNavigate();
+  const { id } = useParams<{ id: string }>();
+  const numericId = id ? parseInt(id, 10) : 0;
 
-  //백엔드에서 받은걸 positions로 정리하고
-  //place에도 백엔드에서 받은걸 정리(MapListBox에 맞게)
-  //그후 places.map으로 백엔드에서 받은걸 maplistbox에 출력, 물론 positions또한 출력함
-
-  //로그인 id와 지도 id 가 같으면 장소 추가 버튼 출력
+  const goBack = () => {
+    navigate(-1);
+  };
 
   useEffect(() => {
     const container = document.getElementById('map');
@@ -25,35 +25,16 @@ const CurationMap = () => {
       };
       const map = new window.kakao.maps.Map(container, options);
 
-      const positions = [
-        {
-          content: '<div>카카오</div>', //가게 이름
-          latlng: new window.kakao.maps.LatLng(33.450705, 126.570677),
-        },
-        {
-          content: '<div>생태연못</div>',
-          latlng: new window.kakao.maps.LatLng(33.450936, 126.569477),
-        },
-        {
-          content: '<div>텃밭</div>',
-          latlng: new window.kakao.maps.LatLng(33.450879, 126.56994),
-        },
-        {
-          content: '<div>근린공원</div>',
-          latlng: new window.kakao.maps.LatLng(33.451393, 126.570738),
-        },
-      ];
+      const positions = getPositions(numericId);
 
       for (let i = 0; i < positions.length; i++) {
-        // 마커를 생성합니다
         const marker = new window.kakao.maps.Marker({
           map: map,
           position: positions[i].latlng,
         });
 
-        // 마커에 표시할 인포윈도우를 생성합니다
         const infowindow = new window.kakao.maps.InfoWindow({
-          content: positions[i].content, // 인포윈도우에 표시할 내용
+          content: positions[i].content,
         });
 
         window.kakao.maps.event.addListener(
@@ -70,7 +51,169 @@ const CurationMap = () => {
     } else {
       console.error('Map container not found');
     }
-  }, []);
+  }, [id]);
+
+  const getPositions = (id: number) => {
+    switch (id) {
+      case 1:
+        return [
+          {
+            content: '<div>돈가스 집 1</div>',
+            latlng: new window.kakao.maps.LatLng(33.450705, 126.570677),
+          },
+          {
+            content: '<div>돈가스 집 2</div>',
+            latlng: new window.kakao.maps.LatLng(33.450936, 126.569477),
+          },
+          {
+            content: '<div>돈가스 집 3</div>',
+            latlng: new window.kakao.maps.LatLng(33.450879, 126.56994),
+          },
+          {
+            content: '<div>돈가스 집 4</div>',
+            latlng: new window.kakao.maps.LatLng(33.451393, 126.570738),
+          },
+        ];
+      case 2:
+        return [
+          {
+            content: '<div>초밥 집 1</div>',
+            latlng: new window.kakao.maps.LatLng(33.450705, 126.570677),
+          },
+          {
+            content: '<div>초밥 집 2</div>',
+            latlng: new window.kakao.maps.LatLng(33.450936, 126.569477),
+          },
+          {
+            content: '<div>초밥 집 3</div>',
+            latlng: new window.kakao.maps.LatLng(33.450879, 126.56994),
+          },
+          {
+            content: '<div>초밥 집 4</div>',
+            latlng: new window.kakao.maps.LatLng(33.451393, 126.570738),
+          },
+        ];
+      case 3:
+        return [
+          {
+            content: '<div>피자 집 1</div>',
+            latlng: new window.kakao.maps.LatLng(33.450705, 126.570677),
+          },
+          {
+            content: '<div>피자 집 2</div>',
+            latlng: new window.kakao.maps.LatLng(33.450936, 126.569477),
+          },
+          {
+            content: '<div>피자 집 3</div>',
+            latlng: new window.kakao.maps.LatLng(33.450879, 126.56994),
+          },
+          {
+            content: '<div>피자 집 4</div>',
+            latlng: new window.kakao.maps.LatLng(33.451393, 126.570738),
+          },
+        ];
+      case 4:
+        return [
+          {
+            content: '<div>햄버거 집 1</div>',
+            latlng: new window.kakao.maps.LatLng(33.450705, 126.570677),
+          },
+          {
+            content: '<div>햄버거 집 2</div>',
+            latlng: new window.kakao.maps.LatLng(33.450936, 126.569477),
+          },
+          {
+            content: '<div>햄버거 집 3</div>',
+            latlng: new window.kakao.maps.LatLng(33.450879, 126.56994),
+          },
+          {
+            content: '<div>햄버거 집 4</div>',
+            latlng: new window.kakao.maps.LatLng(33.451393, 126.570738),
+          },
+        ];
+      default:
+        return [];
+    }
+  };
+
+  const getPlaces = (id: number) => {
+    switch (id) {
+      case 1:
+        return [
+          {
+            title: '돈가스 집 1',
+            address: '대구광역시 1',
+            des: '돈가스 맛집 1',
+          },
+          {
+            title: '돈가스 집 2',
+            address: '대구광역시 2',
+            des: '돈가스 맛집 2',
+          },
+          {
+            title: '돈가스 집 3',
+            address: '대구광역시 3',
+            des: '돈가스 맛집 3',
+          },
+          {
+            title: '돈가스 집 4',
+            address: '대구광역시 4',
+            des: '돈가스 맛집 4',
+          },
+          {
+            title: '돈가스 집 5',
+            address: '대구광역시 5',
+            des: '돈가스 맛집 5',
+          },
+        ];
+      case 2:
+        return [
+          { title: '초밥 집 1', address: '대구광역시 1', des: '초밥 맛집 1' },
+          { title: '초밥 집 2', address: '대구광역시 2', des: '초밥 맛집 2' },
+          { title: '초밥 집 3', address: '대구광역시 3', des: '초밥 맛집 3' },
+          { title: '초밥 집 4', address: '대구광역시 4', des: '초밥 맛집 4' },
+          { title: '초밥 집 5', address: '대구광역시 5', des: '초밥 맛집 5' },
+        ];
+      case 3:
+        return [
+          { title: '피자 집 1', address: '대구광역시 1', des: '피자 맛집 1' },
+          { title: '피자 집 2', address: '대구광역시 2', des: '피자 맛집 2' },
+          { title: '피자 집 3', address: '대구광역시 3', des: '피자 맛집 3' },
+          { title: '피자 집 4', address: '대구광역시 4', des: '피자 맛집 4' },
+          { title: '피자 집 5', address: '대구광역시 5', des: '피자 맛집 5' },
+        ];
+      case 4:
+        return [
+          {
+            title: '햄버거 집 1',
+            address: '대구광역시 1',
+            des: '햄버거 맛집 1',
+          },
+          {
+            title: '햄버거 집 2',
+            address: '대구광역시 2',
+            des: '햄버거 맛집 2',
+          },
+          {
+            title: '햄버거 집 3',
+            address: '대구광역시 3',
+            des: '햄버거 맛집 3',
+          },
+          {
+            title: '햄버거 집 4',
+            address: '대구광역시 4',
+            des: '햄버거 맛집 4',
+          },
+          {
+            title: '햄버거 집 5',
+            address: '대구광역시 5',
+            des: '햄버거 맛집 5',
+          },
+        ];
+      default:
+        return [];
+    }
+  };
 
   // 인포윈도우를 표시하는 클로저를 만드는 함수입니다
   function makeOverListener(map: any, marker: any, infowindow: any) {
@@ -89,42 +232,20 @@ const CurationMap = () => {
   return (
     <MapWrapper>
       <Wrapper id='map'>
-        <BackButtonsWrapper>
+        <BackButtonsWrapper onClick={goBack}>
           <BackButtonPurple label='공부하기 좋은 카페' />
         </BackButtonsWrapper>
         <PlusButtonsWrapper></PlusButtonsWrapper>
       </Wrapper>
       <ListWrapper>
-        <MapListBox
-          title='돈가스 반상'
-          address='대구광역시 북구 산격동'
-          des='안심 돈가스가 맛있는 집'
-        />
-        <MapListBox
-          title='돈가스 반상'
-          address='대구광역시 북구 산격동'
-          des='안심 돈가스가 맛있는 집'
-        />
-        <MapListBox
-          title='돈가스 반상'
-          address='대구광역시 북구 산격동'
-          des='안심 돈가스가 맛있는 집'
-        />
-        <MapListBox
-          title='돈가스 반상'
-          address='대구광역시 북구 산격동'
-          des='안심 돈가스가 맛있는 집'
-        />
-        <MapListBox
-          title='돈가스 반상'
-          address='대구광역시 북구 산격동'
-          des='안심 돈가스가 맛있는 집'
-        />
-        <MapListBox
-          title='돈가스 반상'
-          address='대구광역시 북구 산격동'
-          des='안심 돈가스가 맛있는 집'
-        />
+        {getPlaces(numericId).map((place, index) => (
+          <MapListBox
+            key={index}
+            title={place.title}
+            address={place.address}
+            des={place.des}
+          />
+        ))}
       </ListWrapper>
     </MapWrapper>
   );
@@ -159,7 +280,7 @@ const ListWrapper = styled(List)`
 
   z-index: 100;
   position: absolute;
-  bottom: 0; /* 하단에 고정 */
+  bottom: 0;
 
   &::-webkit-scrollbar {
     display: none;
