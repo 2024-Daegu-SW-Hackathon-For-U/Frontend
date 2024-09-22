@@ -2,6 +2,10 @@
 
 For U - Hot in Daegu
 
+Frontend: https://github.com/2024-Daegu-SW-Hackathon-For-U/Frontend
+Backend : https://github.com/2024-Daegu-SW-Hackathon-For-U/Backend
+
+FE 배포 : http://hot-in-daegu.s3-website.ap-northeast-2.amazonaws.com/
 ## 서비스 요약
 
 관광특구로 지정된 '대구시'의 관광지, 맛집 등 여러 장소를 서로 공유할 수 있는
