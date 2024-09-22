@@ -2,6 +2,7 @@ import { lazy } from 'react';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 
 import { RouterPath } from './path';
+import Test from '@/pages/home/test';
 
 const Header = lazy(() => import('@/components/features/layout/header'));
 const HomePage = lazy(() => import('@/pages/home'));
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: RouterPath.myMapSetting,
         element: <MyMapSetting />,
+      },
+      {
+        path: 'test',
+        element: <Test />,
       },
     ],
   },
