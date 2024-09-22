@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import { SearchButtonL, SearchButtonM } from '@/components/Home/Buttons';
 import { PlaceBoxL, PlaceBoxM } from '@/components/Home/PlaceBox';
 import Search from '@/components/Home/Search';
@@ -8,10 +11,16 @@ import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const HomePage = () => {
+  const navigate = useNavigate();
+  const [keyword, setKeyword] = useState('');
+
+  const searchPlace = () => {
+    navigate(`/keyword/${keyword}`);
+  };
   return (
     <Wrapper>
-      <Search />
-      <SearchButtonM label='내 주변 장소 찾기' />
+      <Search keyword={keyword} setKeyword={setKeyword} />
+      <SearchButtonM label='장소 검색' onClick={searchPlace} />
       <HotPlaceWrapper>
         <SubTitle>요즘 뜨는 장소들</SubTitle>
         <SubDes>많은 사람들이 가는곳은 어딜까요!</SubDes>
