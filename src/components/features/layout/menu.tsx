@@ -20,23 +20,29 @@ type Props = {
 
 const Menu = ({ isOpen, onClose }: Props) => {
   const { handleNavigation, isPending } = useDynamicNavigate();
+
+  const handleClick = (path: string) => {
+    handleNavigation(path);
+    onClose();
+  };
+
   return (
     <Drawer isOpen={isOpen} placement='right' onClose={onClose}>
       <DrawerOverlay />
       <DrawerContent color='color.black' backgroundColor='#f8f8f8'>
         <DrawerCloseButton />
         <BodyBox>
-          <Box onClick={() => handleNavigation(RouterPath.root)}>
+          <Box onClick={() => handleClick(RouterPath.root)}>
             <Text textStyle='md'>🏠 홈으로</Text>
           </Box>
           <Box>
             <Text textStyle='md'>🗺️ 지도 찾기</Text>
           </Box>
           <Divider borderColor='gray.300' />
-          <Box onClick={() => handleNavigation(RouterPath.myMapSetting)}>
+          <Box onClick={() => handleClick(RouterPath.myMapSetting)}>
             <Text textStyle='md'>💼 나의 지도 관리</Text>
           </Box>
-          <Box onClick={() => handleNavigation(RouterPath.mypage)}>
+          <Box onClick={() => handleClick(RouterPath.mypage)}>
             <Text textStyle='md'>🔧 내 정보 변경</Text>
           </Box>
         </BodyBox>
