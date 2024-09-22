@@ -7,8 +7,8 @@ const Header = lazy(() => import('@/components/features/layout/header'));
 const HomePage = lazy(() => import('@/pages/home'));
 const MyMapSetting = lazy(() => import('@/pages/my-map-setting'));
 const MyPage = lazy(() => import('@/pages/mypage'));
-const RecommendMap = lazy(() => import('@/pages/recommend-map'));
-const CurationMap = lazy(() => import('@/pages/curation-map'));
+const RecommendMap = lazy(() => import('@/pages/recommendMap'));
+const CurationMap = lazy(() => import('@/pages/curationMap'));
 
 const router = createBrowserRouter([
   {
