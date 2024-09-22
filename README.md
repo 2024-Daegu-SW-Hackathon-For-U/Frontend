@@ -29,8 +29,7 @@ BE API Docs: http://35.209.121.241:8080/api-docs
 
 ## 시연 영상
 
-(필수) Youtube 링크 (선택) Github Repository 페이지에서 바로 볼 수 있도록
-넣어주셔도 좋습니다.
+https://youtube.com/shorts/4AnDNFPxKNw?feature=share
 
 ## 서비스 소개
 
