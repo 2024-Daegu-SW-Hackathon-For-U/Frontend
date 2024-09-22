@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { BackButtonWhite } from '@/components/Map/BackButton';
 import { PlusButtton } from '@/components/Map/PlusButton';
@@ -8,9 +8,16 @@ import styled from '@emotion/styled';
 
 const RecommandMap = () => {
   const navigate = useNavigate();
+  const { id } = useParams<{ id: string }>();
+  const numericId = id ? parseInt(id, 10) : 0;
 
   const goBack = () => {
     navigate(-1);
+  };
+
+  // numericId를 사용하여 URL을 생성합니다
+  const goToAddPage = () => {
+    navigate(`/recommend-map/${numericId}/add`); // /recommend-map/{id}/add 페이지로 이동
   };
 
   useEffect(() => {
@@ -88,7 +95,7 @@ const RecommandMap = () => {
       <BackButtonsWrapper onClick={goBack}>
         <BackButtonWhite label='공부하기 좋은 카페' />
       </BackButtonsWrapper>
-      <PlusButtonsWrapper>
+      <PlusButtonsWrapper onClick={goToAddPage}>
         <PlusButtton label='장소 추천하기' />
       </PlusButtonsWrapper>
     </Wrapper>

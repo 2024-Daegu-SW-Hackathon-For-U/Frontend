@@ -58,7 +58,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: RouterPath.recommendMap,
+    path: RouterPath.recommendMap(':id'),
     element: (
       <Suspense fallback={<div>Loading...</div>}>
         <RecommendMap />
@@ -66,7 +66,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: RouterPath.recommendAdd,
+    path: RouterPath.recommendAdd(':id'),
     element: (
       <Suspense fallback={<div>Loading...</div>}>
         <AddPlace />
@@ -74,7 +74,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: RouterPath.curationMap,
+    path: RouterPath.curationMap(':id'),
     element: (
       <Suspense fallback={<div>Loading...</div>}>
         <CurationMap />
@@ -82,7 +82,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: RouterPath.curationAdd,
+    path: RouterPath.curationAdd(':id'),
     element: (
       <Suspense fallback={<div>Loading...</div>}>
         <AddPlace />

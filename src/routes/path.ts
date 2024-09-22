@@ -2,11 +2,10 @@ export const RouterPath = {
   root: '/',
   login: 'login',
   mypage: 'mypage',
-  recommendMap: 'recommend-map',
-  curationMap: 'curation-map',
+  recommendMap: (id: string) => `recommend-map/${id}`,
+  curationMap: (id: string) => `curation-map/${id}`,
   myMapSetting: 'mymap-setting',
-  recommendAdd: '/recommend-map/add',
-  curationAdd: '/curation-map/add',
-  searchPlace: (keyword: string) => `/keyword/${keyword}`, 
-
+  recommendAdd: (id: string) => `/recommend-map/${id}/add`,
+  curationAdd: (id: string) => `/curation-map/${id}/add`,
+  searchPlace: (keyword: string) => `/keyword/${keyword}`,
 };

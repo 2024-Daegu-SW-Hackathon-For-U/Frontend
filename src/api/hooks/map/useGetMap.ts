@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 type MapItem = {
   id: number;
   name: string;
+  count: number;
 };
 
 type getMapResponse = MapItem[];
