@@ -73,7 +73,7 @@ function KakaoKeywordMap() {
             offset: new window.kakao.maps.Point(13, 37),
           },
         }}
-        onClick={(marker) => {
+        onClick={(marker: any) => {
           map.panTo(marker.getPosition());
           setSelectedPlace(places[i]);
         }}
@@ -136,7 +136,7 @@ function KakaoKeywordMap() {
               className='item'
               onClick={() => {
                 map.panTo(
-                  new kakao.maps.LatLng(
+                  new window.kakao.maps.LatLng(
                     markers[i].position.lat,
                     markers[i].position.lng
                   )
