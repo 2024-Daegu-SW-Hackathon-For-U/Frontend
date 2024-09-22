@@ -1,6 +1,8 @@
 import { fetchInstance } from '@/api/instance';
 import { useQuery } from '@tanstack/react-query';
 
+type ShareType = 'SHARE' | 'CURATION' | '';
+
 type MapItem = {
   id: number;
   name: string;
@@ -13,22 +15,18 @@ const getMapPath = () => '/api/map';
 
 const GetMapQueryKey = [getMapPath()];
 
-const getMap = async (
-  share: string,
-  curation: string
-): Promise<getMapResponse> => {
+const getMap = async (type: ShareType): Promise<getMapResponse> => {
   const response = await fetchInstance.get<getMapResponse>(getMapPath(), {
     params: {
-      share,
-      curation,
+      type,
     },
   });
   return response.data;
 };
 
-export const useGetMap = (share: string, curation: string) => {
+export const useGetMap = (type: ShareType) => {
   return useQuery<getMapResponse, Error>({
-    queryKey: [GetMapQueryKey, share, curation],
-    queryFn: () => getMap(share, curation),
+    queryKey: [GetMapQueryKey, type],
+    queryFn: () => getMap(type),
   });
 };

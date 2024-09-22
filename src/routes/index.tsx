@@ -102,3 +102,8 @@ const router = createBrowserRouter([
 export const Routes = () => {
   return <RouterProvider router={router} />;
 };
+
+export const getDynamicPath = {
+  kakaoCallback: (code: string) =>
+    `${RouterPath.kakaoCallback}?code=${encodeURIComponent(code)}`, // 다이내믹 경로 생성을 위한 함수 추가
+};
