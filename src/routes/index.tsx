@@ -2,6 +2,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 
 import { RouterPath } from './path';
 import Header from '@/components/features/layout/header';
+import AddPlace from '@/pages/addPlace';
 import CurationMap from '@/pages/curationMap';
 import HomePage from '@/pages/home';
 import MyPage from '@/pages/mypage';
@@ -32,8 +33,16 @@ const router = createBrowserRouter([
     element: <RecommendMap />,
   },
   {
+    path: RouterPath.recommendAdd,
+    element: <AddPlace />,
+  },
+  {
     path: RouterPath.curationMap,
     element: <CurationMap />,
+  },
+  {
+    path: RouterPath.curationAdd,
+    element: <AddPlace />,
   },
 ]);
 
