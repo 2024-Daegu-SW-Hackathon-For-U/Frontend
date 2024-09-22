@@ -7,6 +7,8 @@ Frontend: https://github.com/2024-Daegu-SW-Hackathon-For-U/Frontend
 Backend : https://github.com/2024-Daegu-SW-Hackathon-For-U/Backend
 
 FE 배포 : http://hot-in-daegu.s3-website.ap-northeast-2.amazonaws.com/
+BE 배포 : http://35.209.121.241:8080
+BE API Docs: http://35.209.121.241:8080/api-docs
 
 ## 서비스 요약
 
@@ -74,7 +76,7 @@ swiper, kakao-login, zustand
 
 Spring Boot, JPA, Spring, My SQL
 
-배포 : GCP - vm 인스턴스, Git Action
+배포 : GCP - vm 인스턴스, Git Action, Docker
 
 ## 향후 개선 혹은 발전 방안
 
