@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const routes = {
   root: '/',
   login: '/login',
