@@ -1,6 +1,7 @@
 import ArrowBackBlack from '@/assets/map/ArrowBackBlack.svg';
 import ArrowBackWhite from '@/assets/map/ArrowBackWhite.svg';
 import { Image } from '@chakra-ui/react';
+import { Text } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
 export const BackButtonWhite = ({ label }: { label: string }) => {
@@ -43,12 +44,12 @@ const WrapperPurple = styled.div`
   cursor: pointer;
 `;
 
-const TextBlack = styled.text`
+const TextBlack = styled(Text)`
   font-size: 16px;
   color: #606060;
 `;
 
-const TextWhite = styled.text`
+const TextWhite = styled(Text)`
   font-size: 16px;
   color: #fff;
 `;

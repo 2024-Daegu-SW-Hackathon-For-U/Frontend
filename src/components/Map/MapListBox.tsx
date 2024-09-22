@@ -1,3 +1,4 @@
+import { Text } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
 interface MapListBoxProps {
@@ -10,8 +11,8 @@ export const MapListBox = ({ title, address, des }: MapListBoxProps) => {
   return (
     <PlaceBox2>
       <h2>{title}</h2>
-      <text style={{ fontWeight: 'bold' }}>{address}</text>
-      <text style={{ color: 'gray' }}>{des}</text>
+      <Text style={{ fontWeight: 'bold' }}>{address}</Text>
+      <Text style={{ color: 'gray' }}>{des}</Text>
     </PlaceBox2>
   );
 };

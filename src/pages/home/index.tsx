@@ -1,6 +1,7 @@
 import { SearchButtonL, SearchButtonM } from '@/components/Home/Buttons';
 import { PlaceBoxL, PlaceBoxM } from '@/components/Home/PlaceBox';
 import Search from '@/components/Home/Search';
+import { Text } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -107,13 +108,13 @@ const CurationWrapper = styled.div`
   width: 90%;
 `;
 
-const SubTitle = styled.text`
+const SubTitle = styled(Text)`
   font-size: 18px;
   font-weight: bold;
   color: ${(props) => props.color || '#fff'};
 `;
 
-const SubDes = styled.text`
+const SubDes = styled(Text)`
   font-size: 14px;
   color: ${(props) => props.color || '#fff'};
 `;
