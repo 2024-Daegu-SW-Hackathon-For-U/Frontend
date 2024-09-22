@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Map, MapMarker, useMap } from 'react-kakao-maps-sdk';
 
 import { BackButtonWhite } from '@/components/Map/BackButton';
@@ -12,8 +12,8 @@ function KakaoKeywordMap() {
 
   const [searchInput, setSearchInput] = useState('이태원 맛집');
   const [keyword, setKeyword] = useState('이태원 맛집');
-  // @ts-ignore
-  const [selectedPlace, setSelectedPlace] = useState();
+
+  const [, setSelectedPlace] = useState();
 
   const markerImageSrc =
     'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png';
@@ -32,14 +32,14 @@ function KakaoKeywordMap() {
   useEffect(() => {
     if (!map) return;
     const ps = new window.kakao.maps.services.Places();
-    ps.keywordSearch(keyword, (data: any, status: any, _pagination: any) => {
+    ps.keywordSearch(keyword, (data: any, status: any) => {
       if (status === window.kakao.maps.services.Status.OK) {
         setPlaces(data);
 
         const bounds = new window.kakao.maps.LatLngBounds();
-        let markers = [];
+        const markers = [];
 
-        for (var i = 0; i < data.length; i++) {
+        for (let i = 0; i < data.length; i++) {
           markers.push({
             position: {
               lat: data[i].y,
@@ -47,7 +47,6 @@ function KakaoKeywordMap() {
             },
             content: data[i].place_name,
           });
-          // @ts-ignore
           bounds.extend(new window.kakao.maps.LatLng(data[i].y, data[i].x));
         }
         setMarkers(markers);
@@ -80,7 +79,18 @@ function KakaoKeywordMap() {
         onMouseOver={() => setIsVisible(true)}
         onMouseOut={() => setIsVisible(false)}
       >
-        {isVisible && <div style={{ color: '#000' }}>{content}</div>}
+        {isVisible && (
+          <button
+            style={{
+              color: '#000',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+            }}
+          >
+            {content}
+          </button>
+        )}
       </MapMarker>
     );
   };
@@ -131,32 +141,40 @@ function KakaoKeywordMap() {
         <hr />
         <PlacesList>
           {places.map((item, i) => (
-            <li
-              key={i}
-              className='item'
-              onClick={() => {
-                map.panTo(
-                  new window.kakao.maps.LatLng(
-                    markers[i].position.lat,
-                    markers[i].position.lng
-                  )
-                );
-                setSelectedPlace(item);
-              }}
-            >
-              <span className={`markerbg marker_${i + 1}`}></span>
-              <div className='info'>
-                <h5>{item.place_name}</h5>
-                {item.road_address_name ? (
-                  <>
-                    <span>{item.road_address_name}</span>
-                    <span className='jibun gray'>{item.address_name}</span>
-                  </>
-                ) : (
-                  <span>{item.address_name}</span>
-                )}
-                <span className='tel'>{item.phone}</span>
-              </div>
+            <li key={i} className='item'>
+              <button
+                type='button'
+                onClick={() => {
+                  map.panTo(
+                    new window.kakao.maps.LatLng(
+                      markers[i].position.lat,
+                      markers[i].position.lng
+                    )
+                  );
+                  setSelectedPlace(item);
+                }}
+                style={{
+                  all: 'unset',
+                  cursor: 'pointer',
+                  display: 'block',
+                  width: '100%',
+                  textAlign: 'left',
+                }}
+              >
+                <span className={`markerbg marker_${i + 1}`}></span>
+                <div className='info'>
+                  <h5>{item.place_name}</h5>
+                  {item.road_address_name ? (
+                    <>
+                      <span>{item.road_address_name}</span>
+                      <span className='jibun gray'>{item.address_name}</span>
+                    </>
+                  ) : (
+                    <span>{item.address_name}</span>
+                  )}
+                  <span className='tel'>{item.phone}</span>
+                </div>
+              </button>
             </li>
           ))}
         </PlacesList>
