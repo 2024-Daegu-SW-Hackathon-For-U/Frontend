@@ -1,6 +1,5 @@
-# <팀명> - <서비스명>
+# For U - Hot in Daegu
 
-For U - Hot in Daegu
 
 Frontend: https://github.com/2024-Daegu-SW-Hackathon-For-U/Frontend
 
