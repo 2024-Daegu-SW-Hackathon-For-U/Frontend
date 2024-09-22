@@ -1,14 +1,29 @@
 import { Button } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
-// 미디엄 사이즈 버튼
-export const SearchButtonM = ({ label }: { label: string }) => {
-  return <SearchButtonComponent>{label}</SearchButtonComponent>;
+export const SearchButtonM = ({
+  label,
+  onClick,
+}: {
+  label: string;
+  onClick?: () => void;
+}) => {
+  return (
+    <SearchButtonComponent onClick={onClick}>{label}</SearchButtonComponent>
+  );
 };
 
 // 라지 사이즈 버튼
-export const SearchButtonL = ({ label }: { label: string }) => {
-  return <SearchButtonComponent2>{label}</SearchButtonComponent2>;
+export const SearchButtonL = ({
+  label,
+  onClick,
+}: {
+  label: string;
+  onClick?: () => void;
+}) => {
+  return (
+    <SearchButtonComponent2 onClick={onClick}>{label}</SearchButtonComponent2>
+  );
 };
 
 const SearchButtonComponent = styled(Button)`
