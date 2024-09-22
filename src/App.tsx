@@ -1,4 +1,5 @@
 import { queryClient } from './api/instance';
+import { AuthProvider } from './provider/auth';
 import { Routes } from './routes';
 import GlobalTheme from './styles/global';
 import { ChakraProvider, GlobalStyle } from '@chakra-ui/react';
@@ -8,8 +9,10 @@ function App() {
   return (
     <ChakraProvider theme={GlobalTheme}>
       <QueryClientProvider client={queryClient}>
-        <GlobalStyle />
-        <Routes />
+        <AuthProvider>
+          <GlobalStyle />
+          <Routes />
+        </AuthProvider>
       </QueryClientProvider>
     </ChakraProvider>
   );

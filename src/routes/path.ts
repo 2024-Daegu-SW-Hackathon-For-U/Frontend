@@ -5,8 +5,8 @@ export const RouterPath = {
   recommendMap: 'recommend-map',
   curationMap: 'curation-map',
   myMapSetting: 'mymap-setting',
-  recommendAdd: '/recommend-map/add',
-  curationAdd: '/curation-map/add',
-  searchPlace: (keyword: string) => `/keyword/${keyword}`, 
-
+  recommendAdd: 'recommend-map/add',
+  curationAdd: 'curation-map/add',
+  kakaoCallback: 'oauth/kakao/callback',
+  searchPlace: (keyword: string) => `/keyword/${keyword}`,
 };

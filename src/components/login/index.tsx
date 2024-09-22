@@ -21,6 +21,9 @@ type Props = {
 };
 
 const Login = ({ isOpen, onClose }: Props) => {
+  // const handleKakaoLogin = () => {
+  //   window.location.href = '/oauth/kakao/login';
+  // };
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
