@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useEffect } from 'react';
 import { Map, MapMarker, useMap } from 'react-kakao-maps-sdk';
 
@@ -30,12 +31,12 @@ function KakaoKeywordMap() {
 
   useEffect(() => {
     if (!map) return;
-    const ps = new kakao.maps.services.Places();
-    ps.keywordSearch(keyword, (data, status, _pagination) => {
-      if (status === kakao.maps.services.Status.OK) {
+    const ps = new window.kakao.maps.services.Places();
+    ps.keywordSearch(keyword, (data: any, status: any, _pagination: any) => {
+      if (status === window.kakao.maps.services.Status.OK) {
         setPlaces(data);
 
-        const bounds = new kakao.maps.LatLngBounds();
+        const bounds = new window.kakao.maps.LatLngBounds();
         let markers = [];
 
         for (var i = 0; i < data.length; i++) {
@@ -47,7 +48,7 @@ function KakaoKeywordMap() {
             content: data[i].place_name,
           });
           // @ts-ignore
-          bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+          bounds.extend(new window.kakao.maps.LatLng(data[i].y, data[i].x));
         }
         setMarkers(markers);
 
@@ -68,8 +69,8 @@ function KakaoKeywordMap() {
           size: imageSize,
           options: {
             spriteSize: spriteSize,
-            spriteOrigin: new kakao.maps.Point(0, i * 46 + 10),
-            offset: new kakao.maps.Point(13, 37),
+            spriteOrigin: new window.kakao.maps.Point(0, i * 46 + 10),
+            offset: new window.kakao.maps.Point(13, 37),
           },
         }}
         onClick={(marker) => {
