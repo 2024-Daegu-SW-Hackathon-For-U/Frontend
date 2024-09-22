@@ -1,7 +1,6 @@
 import ArrowBackBlack from '@/assets/map/ArrowBackBlack.svg';
 import ArrowBackWhite from '@/assets/map/ArrowBackWhite.svg';
-import { Image } from '@chakra-ui/react';
-import { Text } from '@chakra-ui/react';
+import { Image, Text } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
 export const BackButtonWhite = ({ label }: { label: string }) => {
