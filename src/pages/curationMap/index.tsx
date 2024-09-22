@@ -51,7 +51,7 @@ const CurationMap = () => {
     } else {
       console.error('Map container not found');
     }
-  }, [id]);
+  }, [id, numericId]);
 
   const getPositions = (id: number) => {
     switch (id) {
