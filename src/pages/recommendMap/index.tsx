@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -21,7 +22,7 @@ const RecommandMap = () => {
       };
       const map = new window.kakao.maps.Map(container, options);
 
-      let positions = [
+      const positions = [
         {
           content: '<div>카카오</div>',
           latlng: new window.kakao.maps.LatLng(33.450705, 126.570677),
@@ -40,15 +41,15 @@ const RecommandMap = () => {
         },
       ];
 
-      for (var i = 0; i < positions.length; i++) {
+      for (let i = 0; i < positions.length; i++) {
         // 마커를 생성합니다
-        let marker = new window.kakao.maps.Marker({
+        const marker = new window.kakao.maps.Marker({
           map: map,
           position: positions[i].latlng,
         });
 
         // 마커에 표시할 인포윈도우를 생성합니다
-        let infowindow = new window.kakao.maps.InfoWindow({
+        const infowindow = new window.kakao.maps.InfoWindow({
           content: positions[i].content, // 인포윈도우에 표시할 내용
         });
 
