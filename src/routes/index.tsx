@@ -9,6 +9,7 @@ const MyMapSetting = lazy(() => import('@/pages/my-map-setting'));
 const MyPage = lazy(() => import('@/pages/mypage'));
 const RecommendMap = lazy(() => import('@/pages/recommendMap'));
 const CurationMap = lazy(() => import('@/pages/curationMap'));
+const AddPlace = lazy(() => import('@/pages/addPlace'));
 
 const router = createBrowserRouter([
   {
@@ -39,8 +40,16 @@ const router = createBrowserRouter([
     element: <RecommendMap />,
   },
   {
+    path: RouterPath.recommendAdd,
+    element: <AddPlace />,
+  },
+  {
     path: RouterPath.curationMap,
     element: <CurationMap />,
+  },
+  {
+    path: RouterPath.curationAdd,
+    element: <AddPlace />,
   },
 ]);
 

@@ -1,6 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect } from 'react';
-
-import { Map as KakaoMap, Marker, InfoWindow } from 'kakao.maps';
 
 import { BackButtonPurple } from '@/components/Map/BackButton';
 import { MapListBox } from '@/components/Map/MapListBox';
@@ -17,7 +16,7 @@ const CurationMap = () => {
       };
       const map = new window.kakao.maps.Map(container, options);
 
-      const positions = [
+      let positions = [
         {
           content: '<div>카카오</div>',
           latlng: new window.kakao.maps.LatLng(33.450705, 126.570677),
@@ -36,15 +35,15 @@ const CurationMap = () => {
         },
       ];
 
-      for (let i = 0; i < positions.length; i++) {
+      for (var i = 0; i < positions.length; i++) {
         // 마커를 생성합니다
-        const marker = new window.kakao.maps.Marker({
-          map: map, // 마커를 표시할 지도
-          position: positions[i].latlng, // 마커의 위치
+        let marker = new window.kakao.maps.Marker({
+          map: map,
+          position: positions[i].latlng,
         });
 
         // 마커에 표시할 인포윈도우를 생성합니다
-        const infowindow = new window.kakao.maps.InfoWindow({
+        let infowindow = new window.kakao.maps.InfoWindow({
           content: positions[i].content, // 인포윈도우에 표시할 내용
         });
 
@@ -65,18 +64,14 @@ const CurationMap = () => {
   }, []);
 
   // 인포윈도우를 표시하는 클로저를 만드는 함수입니다
-  function makeOverListener(
-    map: KakaoMap,
-    marker: Marker,
-    infowindow: InfoWindow
-  ) {
+  function makeOverListener(map: any, marker: any, infowindow: any) {
     return function () {
       infowindow.open(map, marker);
     };
   }
 
   // 인포윈도우를 닫는 클로저를 만드는 함수입니다
-  function makeOutListener(infowindow: InfoWindow) {
+  function makeOutListener(infowindow: any) {
     return function () {
       infowindow.close();
     };
