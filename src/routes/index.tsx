@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 
 import { RouterPath } from './path';
@@ -11,53 +11,99 @@ const MyPage = lazy(() => import('@/pages/mypage'));
 const RecommendMap = lazy(() => import('@/pages/recommendMap'));
 const CurationMap = lazy(() => import('@/pages/curationMap'));
 const AddPlace = lazy(() => import('@/pages/addPlace'));
+const SearchPlace = lazy(() => import('@/pages/searchPlace'));
 
 const router = createBrowserRouter([
   {
     path: RouterPath.root,
     element: (
-      <>
+      <Suspense fallback={<div>Loading...</div>}>
         <Header />
         <Outlet />
-      </>
+      </Suspense>
     ),
     children: [
       {
         path: RouterPath.root,
-        element: <HomePage />,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <HomePage />
+          </Suspense>
+        ),
       },
       {
         path: RouterPath.mypage,
-        element: <MyPage />,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <MyPage />
+          </Suspense>
+        ),
       },
       {
         path: RouterPath.myMapSetting,
-        element: <MyMapSetting />,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <MyMapSetting />
+          </Suspense>
+        ),
       },
       {
         path: 'test',
-        element: <Test />,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <Test />
+          </Suspense>
+        ),
       },
     ],
   },
   {
     path: RouterPath.recommendMap,
-    element: <RecommendMap />,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <RecommendMap />
+      </Suspense>
+    ),
   },
   {
     path: RouterPath.recommendAdd,
-    element: <AddPlace />,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <AddPlace />
+      </Suspense>
+    ),
   },
   {
     path: RouterPath.curationMap,
-    element: <CurationMap />,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <CurationMap />
+      </Suspense>
+    ),
   },
   {
     path: RouterPath.curationAdd,
-    element: <AddPlace />,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <AddPlace />
+      </Suspense>
+    ),
+  },
+  {
+    path: RouterPath.searchPlace(':keyword'),
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <SearchPlace />
+      </Suspense>
+    ),
   },
 ]);
 
 export const Routes = () => {
   return <RouterProvider router={router} />;
+};
+
+export const getDynamicPath = {
+  kakaoCallback: (code: string) =>
+    `${RouterPath.kakaoCallback}?code=${encodeURIComponent(code)}`, // 다이내믹 경로 생성을 위한 함수 추가
 };

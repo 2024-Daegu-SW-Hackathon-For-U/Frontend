@@ -2,12 +2,21 @@ import SearchIcon from '@/assets/home/SearchIcon.svg';
 import { Image } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
-const Search = () => {
+interface SearchProps {
+  keyword: string;
+  setKeyword: (keyword: string) => void;
+}
+
+const Search = ({ keyword, setKeyword }: SearchProps) => {
   return (
     <Wrapper>
-      <Input placeholder='찾고 싶은 장소를 입력해주세요' />
+      <Input
+        placeholder='찾고 싶은 장소를 입력해주세요'
+        value={keyword}
+        onChange={(e) => setKeyword(e.target.value)}
+      />
       <IconWrapper>
-        <Image src={SearchIcon} />
+        <Image src={SearchIcon} alt='Search icon' />
       </IconWrapper>
     </Wrapper>
   );
