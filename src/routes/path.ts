@@ -7,4 +7,5 @@ export const RouterPath = {
   myMapSetting: 'mymap-setting',
   recommendAdd: '/recommend-map/add',
   curationAdd: '/curation-map/add',
+  searchPlace: (keyword: string) => `/keyword/${keyword}`, // 함수를 사용하여 동적으로 생성
 };
