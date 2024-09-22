@@ -8,5 +8,5 @@ const routes = {
   recommendAdd: (id: string) => `/recommend-map/${id}/add`,
   curationAdd: (id: string) => `/curation-map/${id}/add`,
   searchPlace: (keyword: string) => `/search-place?keyword=${keyword}`,
-  kakaoCallback: '/kakao/callback', // 여기에 추가
+  kakaoCallback: 'oauth/kakao/callback',
 };
