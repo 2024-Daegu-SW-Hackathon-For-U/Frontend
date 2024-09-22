@@ -1,26 +1,37 @@
 import Menu from './menu';
 import MenuIcon from '@/assets/header/menu.svg';
-import { Box, Image, Text, useDisclosure } from '@chakra-ui/react';
+import Login from '@/components/login';
+import useDynamicNavigate from '@/hooks/DynamicNavigate';
+import { RouterPath } from '@/routes/path';
+import { Box, Image, Spinner, Text, useDisclosure } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
 const Header = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { handleNavigation, isPending } = useDynamicNavigate();
+  const {
+    isOpen: isMenuOpen,
+    onOpen: onMenuOpen,
+    onClose: onMenuClose,
+  } = useDisclosure();
+
+  const {
+    isOpen: isLoginOpen,
+    onOpen: onLoginOpen,
+    onClose: onLoginClose,
+  } = useDisclosure();
   return (
     <HeaderLayout backgroundColor='color.primary'>
-      <FlexBox>
+      <FlexBox onClick={() => handleNavigation(RouterPath.root)}>
         <Text textStyle='xlBold' color='color.white'>
           핫 인 대구
         </Text>
       </FlexBox>
       <FlexBox justifyContent='space-between' gap='1rem'>
-        <Text textStyle='smBold' color='color.white'>
-          지도 찾기
-        </Text>
-        <Text textStyle='smBold' color='color.white'>
+        <Text textStyle='smBold' onClick={onLoginOpen} color='color.white'>
           로그인
         </Text>
         <FlexBox
-          onClick={onOpen}
+          onClick={onMenuOpen}
           backgroundColor='color.white'
           paddingY='0.5rem'
           paddingX='0.75rem'
@@ -31,7 +42,9 @@ const Header = () => {
           <Image width='1.5rem' src={MenuIcon} alt='menu' />
         </FlexBox>
       </FlexBox>
-      <Menu isOpen={isOpen} onClose={onClose} />
+      {isPending && <Spinner />}
+      <Menu isOpen={isMenuOpen} onClose={onMenuClose} />
+      <Login isOpen={isLoginOpen} onClose={onLoginClose} />
     </HeaderLayout>
   );
 };
