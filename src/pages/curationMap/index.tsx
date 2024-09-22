@@ -7,6 +7,15 @@ import { List } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
 const CurationMap = () => {
+  //const [positions, setPositions] = useState<any[]>([]); // 백엔드에서 받는 데이터 타입 지정 필요
+  //const [places, setPlaces] = useState<any[]>([]);
+
+  //백엔드에서 받은걸 positions로 정리하고
+  //place에도 백엔드에서 받은걸 정리(MapListBox에 맞게)
+  //그후 places.map으로 백엔드에서 받은걸 maplistbox에 출력, 물론 positions또한 출력함
+
+  //로그인 id와 지도 id 가 같으면 장소 추가 버튼 출력
+
   useEffect(() => {
     const container = document.getElementById('map');
     if (container) {
@@ -18,7 +27,7 @@ const CurationMap = () => {
 
       let positions = [
         {
-          content: '<div>카카오</div>',
+          content: '<div>카카오</div>', //가게 이름
           latlng: new window.kakao.maps.LatLng(33.450705, 126.570677),
         },
         {
