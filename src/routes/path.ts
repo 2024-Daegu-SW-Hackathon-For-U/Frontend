@@ -7,4 +7,5 @@ export const RouterPath = {
   myMapSetting: 'mymap-setting',
   recommendAdd: 'recommend-map/add',
   curationAdd: 'curation-map/add',
+  kakaoCallback: '/oauth/kakao/callback',
 };
