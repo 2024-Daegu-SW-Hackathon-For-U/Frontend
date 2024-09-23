@@ -21,8 +21,8 @@ const Test = () => {
 
   return (
     <div>
-      <button onClick={handleSubmit}>
-        {/* {isLoading ? 'Posting...' : 'Submit Map'} */}
+      <button onClick={handleSubmit} disabled={isLoading}>
+        {isLoading ? 'Posting...' : 'Submit Map'}
       </button>
       {isError && <p>Error: {error?.message}</p>}
     </div>

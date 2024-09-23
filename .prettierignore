@@ -2,3 +2,8 @@ node_modules
 .vscode
 .github
 dist
+
+ci.yml
+deploy.yml
+
+pnpm-lock.yaml
