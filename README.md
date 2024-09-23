@@ -1,6 +1,5 @@
 # For U - Hot in Daegu
 
-
 Frontend: https://github.com/2024-Daegu-SW-Hackathon-For-U/Frontend
 
 Backend : https://github.com/2024-Daegu-SW-Hackathon-For-U/Backend

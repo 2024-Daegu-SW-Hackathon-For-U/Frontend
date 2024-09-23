@@ -55,6 +55,14 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
+      {
+        path: 'test',
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <Test />
+          </Suspense>
+        ),
+      },
     ],
   },
   {
