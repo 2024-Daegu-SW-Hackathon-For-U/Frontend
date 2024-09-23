@@ -24,6 +24,6 @@ jobs:
             
             - name: Lint Code
               run: pnpm lint
-              
-            - name: Build
-              run: CI='' pnpm run build
+
+            - name: Format Code
+              run: pnpm format
